@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Ejemplo</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Librerías CSS de Toastify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda Online</h1>
+        <button id="ver-carrito">Ver Carrito (<span id="cantidad-carrito">0</span>)</button>
+    </header>
+
+    <main id="productos-container">
+        <!-- Productos generados dinámicamente aquí -->
+    </main>
+
+    <!-- Carrito Modal -->
+    <div id="carrito-modal" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Tu Carrito</h2>
+            <ul id="carrito-lista">
+                <!-- Productos en el carrito -->
+            </ul>
+            <p>Total: $<span id="total-carrito">0.00</span></p>
+            <button id="finalizar-compra">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- Librerías JS -->
+    <script src="librerias/sweetalert.min.js"></script>
+    <script src="librerias/toastify.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

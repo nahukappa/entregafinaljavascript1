@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Camiseta Azul",
+        "precio": 19.99,
+        "imagen": "assets/camiseta_azul.jpg",
+        "descripcion": "Camiseta de algodón 100% azul."
+    },
+    {
+        "id": 2,
+        "nombre": "Jeans Denim",
+        "precio": 49.99,
+        "imagen": "assets/jeans_denim.jpg",
+        "descripcion": "Jeans denim clásico de corte recto."
+    },
+    {
+        "id": 3,
+        "nombre": "Zapatillas Deportivas",
+        "precio": 59.99,
+        "imagen": "assets/zapatillas_deportivas.jpg",
+        "descripcion": "Zapatillas cómodas para deporte y uso diario."
+    }
+]
