@@ -1,8 +1,6 @@
-// Variables globales
 let productos = [];
 let carrito = [];
 
-// Elementos del DOM
 const productosContainer = document.getElementById('productos-container');
 const verCarritoBtn = document.getElementById('ver-carrito');
 const carritoModal = document.getElementById('carrito-modal');
@@ -12,7 +10,7 @@ const totalCarrito = document.getElementById('total-carrito');
 const cantidadCarrito = document.getElementById('cantidad-carrito');
 const finalizarCompraBtn = document.getElementById('finalizar-compra');
 
-// Fetch de productos desde JSON
+
 fetch('productos.json')
     .then(response => response.json())
     .then(data => {
@@ -22,7 +20,7 @@ fetch('productos.json')
     })
     .catch(error => console.error('Error al cargar productos:', error));
 
-// Mostrar productos en el DOM
+
 function mostrarProductos() {
     productosContainer.innerHTML = '';
     productos.forEach(producto => {
@@ -39,7 +37,7 @@ function mostrarProductos() {
     });
 }
 
-// Agregar producto al carrito
+
 function agregarAlCarrito(id) {
     const producto = productos.find(p => p.id === id);
     if (producto) {
@@ -62,7 +60,7 @@ function agregarAlCarrito(id) {
     }
 }
 
-// Actualizar carrito en el DOM y en Web Storage
+
 function actualizarCarrito() {
     carritoLista.innerHTML = '';
     let total = 0;
@@ -77,12 +75,11 @@ function actualizarCarrito() {
     guardarCarrito();
 }
 
-// Guardar carrito en Web Storage
 function guardarCarrito() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-// Cargar carrito desde Web Storage
+
 function cargarCarrito() {
     const almacenado = localStorage.getItem('carrito');
     if (almacenado) {
@@ -91,24 +88,23 @@ function cargarCarrito() {
     }
 }
 
-// Mostrar modal del carrito
+
 verCarritoBtn.addEventListener('click', () => {
     carritoModal.style.display = 'block';
 });
 
-// Cerrar modal del carrito
 cerrarModal.addEventListener('click', () => {
     carritoModal.style.display = 'none';
 });
 
-// Cerrar modal al hacer clic fuera
+
 window.addEventListener('click', (e) => {
     if (e.target == carritoModal) {
         carritoModal.style.display = 'none';
     }
 });
 
-// Finalizar compra
+
 finalizarCompraBtn.addEventListener('click', () => {
     if (carrito.length === 0) {
         Swal.fire('Carrito Vacío', 'Agrega productos al carrito antes de finalizar la compra.', 'info');
